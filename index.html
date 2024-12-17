@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KorCo - Informacinė svetainė</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            background: #0f1624;
+            color: #fff;
+        }
+
+        nav {
+            width: 20%;
+            background: #1e2a38;
+            padding: 20px;
+            box-shadow: 3px 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+            nav h2 {
+                text-align: center;
+                color: #5dade2;
+            }
+
+            nav a {
+                display: block;
+                color: #cfd9e7;
+                text-decoration: none;
+                padding: 10px;
+                margin: 10px 0;
+                background: #273447;
+                border-radius: 5px;
+                text-align: center;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+                nav a:hover {
+                    background: #3a5fcd;
+                    color: #fff;
+                    transform: scale(1.05);
+                }
+
+        .content {
+            width: 80%;
+            padding: 20px;
+            overflow-y: auto;
+            background: #182230;
+        }
+
+            .content section {
+                display: none;
+                animation: fadeIn 0.6s;
+            }
+
+                .content section.active {
+                    display: block;
+                }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .content h1 {
+            color: #5dade2;
+            border-bottom: 2px solid #3a5fcd;
+            padding-bottom: 10px;
+        }
+
+        .fancy-background {
+            background: linear-gradient(135deg, #1f2833, #3a5fcd);
+            color: #e0e0e0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        #izymybes img {
+            width: 375px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .about-us {
+            text-align: center;
+            padding: 40px 20px;
+            color: #e0e0e0;
+        }
+
+            .about-us h1 {
+                font-size: 3em;
+                color: #5dade2;
+            }
+
+            .about-us p {
+                font-size: 1.2em;
+                margin: 10px 0;
+            }
+    </style>
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.content section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <h2>KorCo</h2>
+        <a onclick="showSection('apie')">Apie mus</a>
+        <a onclick="showSection('nariai')">Nariai</a>
+        <a onclick="showSection('straipsnis')">Straipsnis</a>
+        <a onclick="showSection('izymybes')">Įžymybės</a>
+        <a onclick="showSection('saltiniai')">Šaltiniai</a>
+    </nav>
+
+    <div class="content">
+        <section id="apie" class="active">
+            <div class="about-us">
+                <h1>KorCo</h1>
+                <p><strong>Mūsų šūkis:</strong> Daryk darbus laiku!</p>
+                <p><strong>Misija:</strong> Informuoti apie komunikacijos filosofiją ir įžymybes</p>
+                <p><strong>Vizija:</strong> Tapti komunikacijos filosofijos ekspertais</p>
+                <img src="images/welcome.jpg" alt="Apie mus">
+            </div>
+        </section>
+
+        <section id="nariai">
+            <h1>Nariai</h1>
+            <p class="fancy-background">Ivan Korolkov</p>
+            <img src="images/nariai.png" alt="Nariai">
+        </section>
+
+        <section id="straipsnis">
+            <h1>Straipsnis</h1>
+            <p class="fancy-background">
+                Kaip „Uodega vizgina šunį" apverčia realybę.
+                Filmas „Uodega vizgina šunį" (angl. Wag the Dog) yra satyrinis politinis trileris, kuris atskleidžia, kaip žiniasklaida gali būti naudojama manipuliuoti visuomene. Filmą režisavo Barry Levinsono, o pagrindinius vaidmenis atlieka Robertas De Niro (Breinas) ir Dustinas Hoffmanas (Stenlis Motssas). Juostoje nagrinėjami melagingų naujienų, viešųjų ryšių ir politinės propagandos mechanizmai, kurie verčia susimąstyti apie šiuolaikinės visuomenės informacijos patikimumą.
+                Siužetas ir pagrindiniai veikėjai
+                Filmas prasideda tuo, kad artėjant Jungtinių Valstijų prezidento rinkimams, kyla seksualinis skandalas, galintis sužaloti prezidento reputaciją ir pakenkti jo perrinkimo galimybėms. Tam, kad atitrauktų visuomenės dėmesį, prezidento patarėjas Breinas pasamdo Holivudo prodiuserį Stenlį Motssą, kuris sukuria fiktyvų karą su Albanija. Išgalvotas konfliktas paverčiasi grandiozine viešųjų ryšių kampanija, kurioje naudojamos surežisuotos scenos, muzika ir netgi suvaidinti pabėgėliai.
+                Breinas yra strategas, žinantis, kaip manipuliuoti masių dėmesiu. Jis apskaičiuoja kiekvieną žingsnį, kad istorija atrodytų įtikinamai. Tuo tarpu Stenlis, patyręs prodiuseris, savo darbą vertina kaip meno formą ir netgi didžiuojasi „karu", kurį jis „sukūrė". Jų duetas atskleidžia, kaip lengva manipuliuoti informacija ir paversti melą „tiesa".
+                Kalbos stilius ir metaforos
+                Filme gausu simbolikos ir metaforų. Pats pavadinimas „Uodega vizgina šunį" atspindi pagrindinę filmo idėją: mažesnė jėga (uodega) gali valdyti didesnę (šunį). Tai taikliai iliustruoja, kaip maža informacinės kampanijos detalė gali sukurti milžinišką poveikį visuomenei.
+                Pavyzdžiui, scena, kurioje Stenlis kuria „išgelbėtos pabėgėlės" istoriją, parodo, kaip Holivudo technologijos gali paversti bet kokią fantaziją realybe. Realybė ir fikcija susilieja, kai žiniasklaida ima transliuoti melagingą žinutę kaip tiesą, o visuomenė „praryja" ją nekritiškai.
+                Kritika ir aktualumas šiuolaikinei visuomenei
+                „Uodega vizgina šunį", nors sukurtas 1997 metais, yra itin aktualus ir šiandien. Filmas parodo, kaip politikai ir žiniasklaida gali manipuliuoti masių nuomone tam, kad pasiektų savo tikslus. Socialinių tinklų eroje tokie procesai tik paspartėjo - netikros naujienos, deepfake technologijos ir algoritmai daro įtaką tam, kuo tikime ir ką laikome tiesa.
+                Šis filmas taip pat siunčia įspėjimą - mes, kaip visuomenė, turime būti kritiški ir gebėti atskirti melą nuo tiesos. Kitaip tapsime pasyviais stebėtojais, kuriuos lengva manipuliuoti.
+                Rekomendacija
+                Filmas „Uodega vizgina šunį" yra privalomas tiems, kurie domisi politika, žiniasklaidos galia ir visuomenės manipuliavimo metodais. Tai ne tik pramoginis filmas, bet ir gili satyra, verčianti susimąstyti apie tai, kiek iš tiesų galime pasitikėti tuo, ką matome ekranuose.
+
+            </p>
+            <img src="images/straipsnis.png" alt="Straipsnis">
+        </section>
+
+        <section id="izymybes">
+            <h1>Įžymybės</h1>
+            <div class="fancy-background">
+                <h2>Jonas Basanavičius (Miręs)</h2>
+                <img src="images/jonas.jpg" alt="Jonas Basanavičius">
+                <p>Jonas Basanavičius (1851–1927) – lietuvių visuomenės veikėjas, Nepriklausomybės akto signataras, gydytojas, tautosakininkas, vienas laikraščio Aušra (Auszra) steigėjų, Lietuvių mokslo draugijos įkūrimo iniciatorius. Jonas Basanavičius – lietuvių tautinio atgimimo simbolinė figūra, dažnai vadinamas „tautos patriarchu“.</p>
+            </div>
+
+            <div class="fancy-background">
+                <h2>Gitanas Nausėda (Gyva)</h2>
+                <img src="images/nauseda.png" alt="Gitanas Nausėda">
+                <p>Nausėda Gitanas 1964 05 19Klaipėda, lietuvių ekonomistas, finansų analitikas, dešimtasis ir vienuoliktasis Lietuvos Respublikos prezidentas (nuo 2019, 2024 perrinktas). Daktaras (socialiniai mokslai, 1993). Japonijos Gifu universiteto garbės daktaras (2019)..</p>
+            </div>
+        </section>
+
+        <section id="saltiniai">
+            <h1>Šaltiniai</h1>
+            <ul class="fancy-background">
+                <li><a href="http://www.xn--altiniai-4wb.info/index/details/1035#:~:text=Jonas%20Basanavi%C4%8Dius%20(1851%E2%80%931927),da%C5%BEnai%20vadinamas%20%E2%80%9Etautos%20patriarchu%E2%80%9C." target="_blank">saltiniai.info</a></li>
+                <li><a href="https://www.vle.lt/straipsnis/gitanas-nauseda/" target="_blank">vle.lt</a></li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
